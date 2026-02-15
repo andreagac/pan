@@ -155,22 +155,12 @@ export default function Home() {
                   fresco y calentito en tu mesa.
                 </p>
               </div>
-              <div className="mt-10 grid grid-cols-3 gap-6">
+              <div className="mt-10">
                 <div className="text-center">
                   <p className="font-serif text-3xl font-bold text-gold">80+</p>
                   <p className="mt-1 text-sm text-brown-dark/60">
                     Años de tradición
                   </p>
-                </div>
-                <div className="text-center">
-                  <p className="font-serif text-3xl font-bold text-gold">3</p>
-                  <p className="mt-1 text-sm text-brown-dark/60">
-                    Generaciones
-                  </p>
-                </div>
-                <div className="text-center">
-                  <p className="font-serif text-3xl font-bold text-gold">4.1</p>
-                  <p className="mt-1 text-sm text-brown-dark/60">Estrellas</p>
                 </div>
               </div>
             </div>
@@ -293,7 +283,7 @@ export default function Home() {
             Para tu negocio
           </p>
           <h2 className="font-serif text-3xl font-bold text-cream md:text-5xl">
-            Reparto para locales comerciales
+            Reparto para almacenes
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cream/70">
             Realizamos reparto todos los días desde 5 kg en adelante con
