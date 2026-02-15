@@ -50,7 +50,7 @@ export default function Home() {
             alt="Panadería Antofagasta"
             width={280}
             height={280}
-            className="mb-8 h-auto w-56 drop-shadow-lg md:w-72"
+            className="mb-8 h-auto w-72 drop-shadow-lg md:w-96"
             priority
           />
           <p className="mx-auto max-w-lg text-lg text-cream/80">
