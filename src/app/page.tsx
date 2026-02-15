@@ -2,64 +2,504 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="min-h-screen">
+      {/* Navbar */}
+      <nav className="fixed top-0 z-50 w-full border-b border-gold/20 bg-cream/95 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+          <a href="#" className="flex items-center gap-3">
+            <Image
+              src="/logo.png"
+              alt="Panadería Antofagasta"
+              width={48}
+              height={48}
+              className="h-12 w-auto"
+            />
+          </a>
+          <div className="hidden gap-6 text-sm font-medium text-brown-dark/80 md:flex">
+            <a href="#nosotros" className="transition-colors hover:text-gold">
+              Nosotros
+            </a>
+            <a href="#productos" className="transition-colors hover:text-gold">
+              Productos
+            </a>
+            <a href="#reparto" className="transition-colors hover:text-gold">
+              Reparto
+            </a>
+            <a href="#horario" className="transition-colors hover:text-gold">
+              Horario
+            </a>
+            <a href="#contacto" className="transition-colors hover:text-gold">
+              Contacto
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-brown-dark px-6 pt-20 text-center">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/marraquetas.jpg"
+          alt="Marraquetas recién horneadas"
+          fill
+          className="object-cover opacity-30"
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        <div className="relative z-10 flex flex-col items-center">
+          <Image
+            src="/logo.png"
+            alt="Panadería Antofagasta"
+            width={280}
+            height={280}
+            className="mb-8 h-auto w-56 drop-shadow-lg md:w-72"
+            priority
+          />
+          <p className="mx-auto max-w-lg text-lg text-cream/80">
+            Más de 80 años de tradición panadera en Santiago Centro. Pan
+            artesanal horneado con amor, como lo hacía la abuela.
           </p>
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <a
+              href="#productos"
+              className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-brown-dark transition-colors hover:bg-gold-light"
+            >
+              Ver nuestros productos
+            </a>
+            <a
+              href="#reparto"
+              className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-brown-dark transition-colors hover:bg-gold-light"
+            >
+              Reparto comercial
+            </a>
+            <a
+              href="#horario"
+              className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-brown-dark transition-colors hover:bg-gold-light"
+            >
+              Visítanos
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className="absolute bottom-8 z-10 animate-bounce text-cream/50">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+        </div>
+      </section>
+
+      {/* Sobre Nosotros */}
+      <section id="nosotros" className="bg-cream px-6 py-24">
+        <div className="mx-auto max-w-5xl">
+          <div className="text-center">
+            <p className="mb-2 text-sm tracking-[0.3em] text-gold uppercase">
+              Nuestra historia
+            </p>
+            <h2 className="font-serif text-3xl font-bold text-brown-dark md:text-4xl">
+              Tradición que se amasa con las manos
+            </h2>
+          </div>
+          <div className="mt-12 grid items-center gap-12 md:grid-cols-2">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="overflow-hidden rounded-2xl">
+                <Image
+                  src="/fachada.jpg"
+                  alt="Fachada de Panadería Antofagasta"
+                  width={400}
+                  height={300}
+                  className="h-48 w-full object-cover transition-transform hover:scale-105"
+                />
+              </div>
+              <div className="overflow-hidden rounded-2xl">
+                <Image
+                  src="/horno.png"
+                  alt="Panaderos trabajando en el horno"
+                  width={400}
+                  height={300}
+                  className="h-48 w-full object-cover transition-transform hover:scale-105"
+                />
+              </div>
+              <div className="col-span-2 overflow-hidden rounded-2xl">
+                <Image
+                  src="/local.jpg"
+                  alt="Atención al cliente en la panadería"
+                  width={800}
+                  height={400}
+                  className="h-52 w-full object-cover transition-transform hover:scale-105"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="space-y-4 leading-relaxed text-brown-dark/70">
+                <p>
+                  Somos Panadería Antofagasta, una panadería tradicional de la
+                  comuna de Santiago. Desde 1940 junto a los vecinos del barrio.
+                  Ya son casi ocho décadas atendiendo en la esquina San Alfonso
+                  con Antofagasta.
+                </p>
+                <p>
+                  Hemos sido testigos de los cambios de la ciudad. Aún
+                  recordamos cuando pasaba el tranvía por fuera de nuestro
+                  local. Pero hay algo que con el tiempo no ha cambiado, es el
+                  cariño y pasión con el que hacemos el pancito.
+                </p>
+                <p>
+                  Atendemos de lunes a domingo para tenerte siempre el pancito
+                  fresco y calentito en tu mesa.
+                </p>
+              </div>
+              <div className="mt-10 grid grid-cols-3 gap-6">
+                <div className="text-center">
+                  <p className="font-serif text-3xl font-bold text-gold">80+</p>
+                  <p className="mt-1 text-sm text-brown-dark/60">
+                    Años de tradición
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p className="font-serif text-3xl font-bold text-gold">3</p>
+                  <p className="mt-1 text-sm text-brown-dark/60">
+                    Generaciones
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p className="font-serif text-3xl font-bold text-gold">4.1</p>
+                  <p className="mt-1 text-sm text-brown-dark/60">Estrellas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Productos */}
+      <section id="productos" className="bg-beige px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center">
+            <p className="mb-2 text-sm tracking-[0.3em] text-gold uppercase">
+              Lo que horneamos
+            </p>
+            <h2 className="font-serif text-3xl font-bold text-brown-dark md:text-4xl">
+              Nuestros Productos
+            </h2>
+          </div>
+          {/* Productos destacados */}
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                image: "/marraquetas.jpg",
+                name: "Pan Fresco del Día",
+                desc: "Marraquetas, hallullas, frica, amasado y más. Horneado varias veces al día para que siempre tengas pan calentito y crujiente.",
+              },
+              {
+                image: "/empanadas.png",
+                name: "Empanadas de Pino",
+                desc: "Receta familiar con carne, cebolla, huevo y aceituna. Preparadas a mano como manda la tradición chilena.",
+              },
+              {
+                image: "/galletas.png",
+                name: "Dulces y Pasteles",
+                desc: "Berlines, cachitos, tortas y pasteles para endulzar tu día. Hechos con recetas que han pasado de generación en generación.",
+              },
+            ].map((product) => (
+              <div
+                key={product.name}
+                className="overflow-hidden rounded-2xl border border-gold/10 bg-cream transition-shadow hover:shadow-lg"
+              >
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover transition-transform hover:scale-105"
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="font-serif text-xl font-semibold text-brown-dark">
+                    {product.name}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-brown-dark/60">
+                    {product.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Nuestros Panes */}
+          <div className="mt-16 text-center">
+            <h3 className="font-serif text-2xl font-bold text-brown-dark">
+              Nuestros Panes
+            </h3>
+            <p className="mt-2 text-brown-dark/60">
+              Variedad horneada fresca todos los días
+            </p>
+          </div>
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {[
+              { image: "/marraquetas.jpg", name: "Marraqueta" },
+              { image: "/hallullas.jpg", name: "Hallulla" },
+              { image: "/pan-completo.jpg", name: "Completo (Lengua)" },
+              { image: null, name: "Frica" },
+              { image: null, name: "Amasado" },
+              { image: null, name: "Molde" },
+              { image: null, name: "Especial" },
+              { image: null, name: "Centeno" },
+            ].map((pan) => (
+              <div
+                key={pan.name}
+                className="overflow-hidden rounded-xl border border-gold/10 bg-cream transition-shadow hover:shadow-md"
+              >
+                {pan.image ? (
+                  <div className="relative h-32 w-full overflow-hidden">
+                    <Image
+                      src={pan.image}
+                      alt={pan.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex h-32 items-center justify-center bg-beige">
+                    <span className="text-4xl">{"\uD83C\uDF5E"}</span>
+                  </div>
+                )}
+                <p className="py-3 text-center font-serif text-sm font-semibold text-brown-dark">
+                  {pan.name}
+                </p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* Reparto */}
+      <section id="reparto" className="relative overflow-hidden bg-brown-dark px-6 py-24">
+        <Image
+          src="/panadero.png"
+          alt="Panadero trabajando"
+          fill
+          className="object-cover opacity-20"
+        />
+        <div className="relative z-10 mx-auto max-w-4xl text-center">
+          <p className="mb-2 text-sm tracking-[0.3em] text-gold uppercase">
+            Para tu negocio
+          </p>
+          <h2 className="font-serif text-3xl font-bold text-cream md:text-5xl">
+            Reparto para locales comerciales
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cream/70">
+            Realizamos reparto todos los días desde 5 kg en adelante con
+            mejores precios. Consulta por cobertura y disponibilidad.
+          </p>
+          <div className="mx-auto mt-10 grid max-w-lg grid-cols-3 gap-8">
+            <div>
+              <p className="font-serif text-3xl font-bold text-gold">5 kg</p>
+              <p className="mt-1 text-sm text-cream/50">Pedido mínimo</p>
+            </div>
+            <div>
+              <p className="font-serif text-3xl font-bold text-gold">7 días</p>
+              <p className="mt-1 text-sm text-cream/50">De la semana</p>
+            </div>
+            <div>
+              <p className="font-serif text-3xl font-bold text-gold">Mejor</p>
+              <p className="mt-1 text-sm text-cream/50">Precio por mayor</p>
+            </div>
+          </div>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="tel:+56224036861"
+              className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-brown-dark transition-colors hover:bg-gold-light"
+            >
+              Llamar: (2) 2403 6861
+            </a>
+            <a
+              href="https://instagram.com/panaderia_antofagasta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border-2 border-cream/30 px-8 py-3 text-sm font-semibold text-cream transition-colors hover:border-gold hover:text-gold"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://web.facebook.com/PanaderiaAntofagasta/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border-2 border-cream/30 px-8 py-3 text-sm font-semibold text-cream transition-colors hover:border-gold hover:text-gold"
+            >
+              Facebook
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Horario y Ubicación */}
+      <section id="horario" className="bg-cream px-6 py-24">
+        <div className="mx-auto max-w-4xl">
+          <div className="text-center">
+            <p className="mb-2 text-sm tracking-[0.3em] text-gold uppercase">
+              Encuéntranos
+            </p>
+            <h2 className="font-serif text-3xl font-bold text-brown-dark md:text-4xl">
+              Horario y Ubicación
+            </h2>
+          </div>
+          <div className="mt-12 grid gap-12 md:grid-cols-2">
+            {/* Horario */}
+            <div className="rounded-2xl border border-gold/10 bg-beige p-8">
+              <h3 className="mb-6 font-serif text-xl font-semibold text-brown-dark">
+                Horario de Atención
+              </h3>
+              <div className="space-y-3 text-sm">
+                {[
+                  { day: "Lunes a Sábado", hours: "6:30 — 20:30" },
+                  {
+                    day: "Domingo",
+                    hours: "7:30 — 15:00 / 16:00 — 19:00",
+                  },
+                ].map((row) => (
+                  <div
+                    key={row.day}
+                    className="flex items-center justify-between border-b border-gold/10 pb-3"
+                  >
+                    <span className="font-medium text-brown-dark">
+                      {row.day}
+                    </span>
+                    <span className="text-brown-dark/60">{row.hours}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Ubicación y Contacto */}
+            <div className="rounded-2xl border border-gold/10 bg-beige p-8">
+              <h3 className="mb-6 font-serif text-xl font-semibold text-brown-dark">
+                Ubicación y Contacto
+              </h3>
+              <div className="space-y-5 text-sm">
+                <div>
+                  <p className="mb-1 font-medium text-brown-dark">Dirección</p>
+                  <a
+                    href="https://maps.google.com/?q=Antofagasta+2899+Santiago+Centro"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brown-dark/70 underline decoration-gold/30 underline-offset-2 transition-colors hover:text-gold"
+                  >
+                    Antofagasta 2899, Santiago Centro
+                  </a>
+                </div>
+                <div>
+                  <p className="mb-1 font-medium text-brown-dark">Teléfono</p>
+                  <a
+                    href="tel:+56224036861"
+                    className="text-brown-dark/70 transition-colors hover:text-gold"
+                  >
+                    (2) 2403 6861
+                  </a>
+                </div>
+                <div>
+                  <p className="mb-1 font-medium text-brown-dark">
+                    Redes Sociales
+                  </p>
+                  <div className="flex flex-col gap-1">
+                    <a
+                      href="https://instagram.com/panaderia_antofagasta"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-brown-dark/70 transition-colors hover:text-gold"
+                    >
+                      Instagram: @panaderia_antofagasta
+                    </a>
+                    <a
+                      href="https://web.facebook.com/PanaderiaAntofagasta/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-brown-dark/70 transition-colors hover:text-gold"
+                    >
+                      Facebook
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-12 overflow-hidden rounded-2xl border border-gold/10">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d832.5!2d-70.6595!3d-33.4585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c4ff4c000001%3A0x5c0d1e2f3a4b5c6d!2sAntofagasta%202899%2C%20Santiago%20Centro!5e0!3m2!1ses!2scl!4v1700000000000!5m2!1ses!2scl"
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Ubicación Panadería Antofagasta"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Footer */}
+      <footer
+        id="contacto"
+        className="border-t border-gold/10 bg-brown-dark px-6 py-12"
+      >
+        <div className="mx-auto max-w-6xl">
+          <div className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
+            <div className="flex items-center gap-4">
+              <Image
+                src="/logo.png"
+                alt="Panadería Antofagasta"
+                width={40}
+                height={40}
+                className="h-10 w-auto brightness-150"
+              />
+              <div>
+                <p className="font-serif text-lg font-bold text-cream">
+                  Panadería Antofagasta
+                </p>
+                <p className="text-sm text-cream/50">
+                  Antofagasta 2899, Santiago Centro
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-6 text-sm text-cream/60">
+              <a
+                href="tel:+56224036861"
+                className="transition-colors hover:text-gold"
+              >
+                (2) 2403 6861
+              </a>
+              <a
+                href="https://instagram.com/panaderia_antofagasta"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-gold"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://web.facebook.com/PanaderiaAntofagasta/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-gold"
+              >
+                Facebook
+              </a>
+            </div>
+          </div>
+          <div className="mt-8 border-t border-cream/10 pt-6 text-center text-xs text-cream/30">
+            © {new Date().getFullYear()} Panadería Antofagasta. Todos los
+            derechos reservados.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
