@@ -1,39 +1,12 @@
 import Image from "next/image";
+import Navbar from "./components/Navbar";
+import FadeIn from "./components/FadeIn";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Navbar */}
-      <nav className="fixed top-0 z-50 w-full border-b border-gold/20 bg-cream/95 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-          <a href="#" className="flex items-center gap-3">
-            <Image
-              src="/logo.png"
-              alt="Panadería Antofagasta"
-              width={48}
-              height={48}
-              className="h-12 w-auto"
-            />
-          </a>
-          <div className="hidden gap-6 text-sm font-medium text-brown-dark/80 md:flex">
-            <a href="#nosotros" className="transition-colors hover:text-gold">
-              Nosotros
-            </a>
-            <a href="#productos" className="transition-colors hover:text-gold">
-              Productos
-            </a>
-            <a href="#reparto" className="transition-colors hover:text-gold">
-              Reparto
-            </a>
-            <a href="#horario" className="transition-colors hover:text-gold">
-              Horario
-            </a>
-            <a href="#contacto" className="transition-colors hover:text-gold">
-              Contacto
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero */}
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-brown-dark px-6 pt-20 text-center">
@@ -97,7 +70,7 @@ export default function Home() {
 
       {/* Sobre Nosotros */}
       <section id="nosotros" className="bg-cream px-6 py-24">
-        <div className="mx-auto max-w-5xl">
+        <FadeIn className="mx-auto max-w-5xl">
           <div className="text-center">
             <p className="mb-2 text-sm tracking-[0.3em] text-gold uppercase">
               Nuestra historia
@@ -165,12 +138,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </FadeIn>
       </section>
 
       {/* Productos */}
       <section id="productos" className="bg-beige px-6 py-24">
-        <div className="mx-auto max-w-6xl">
+        <FadeIn className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="mb-2 text-sm tracking-[0.3em] text-gold uppercase">
               Lo que horneamos
@@ -266,8 +239,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-
-        </div>
+        </FadeIn>
       </section>
 
       {/* Reparto */}
@@ -278,7 +250,7 @@ export default function Home() {
           fill
           className="object-cover opacity-20"
         />
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <FadeIn className="relative z-10 mx-auto max-w-4xl text-center">
           <p className="mb-2 text-sm tracking-[0.3em] text-gold uppercase">
             Para tu negocio
           </p>
@@ -327,12 +299,12 @@ export default function Home() {
               Facebook
             </a>
           </div>
-        </div>
+        </FadeIn>
       </section>
 
       {/* Horario y Ubicación */}
       <section id="horario" className="bg-cream px-6 py-24">
-        <div className="mx-auto max-w-4xl">
+        <FadeIn className="mx-auto max-w-4xl">
           <div className="text-center">
             <p className="mb-2 text-sm tracking-[0.3em] text-gold uppercase">
               Encuéntranos
@@ -432,14 +404,108 @@ export default function Home() {
               title="Ubicación Panadería Antofagasta"
             />
           </div>
-        </div>
+        </FadeIn>
+      </section>
+
+      {/* Contacto */}
+      <section id="contacto" className="bg-beige px-6 py-24">
+        <FadeIn className="mx-auto max-w-2xl">
+          <div className="text-center">
+            <p className="mb-2 text-sm tracking-[0.3em] text-gold uppercase">
+              Escríbenos
+            </p>
+            <h2 className="font-serif text-3xl font-bold text-brown-dark md:text-4xl">
+              Contacto
+            </h2>
+            <p className="mt-4 text-brown-dark/60">
+              ¿Tienes alguna consulta o quieres hacer un pedido especial?
+              Déjanos tu mensaje.
+            </p>
+          </div>
+          <form
+            action="https://formspree.io/f/xdalgrpv"
+            method="POST"
+            className="mt-12 space-y-6"
+          >
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div>
+                <label
+                  htmlFor="nombre"
+                  className="mb-2 block text-sm font-medium text-brown-dark"
+                >
+                  Nombre
+                </label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  required
+                  className="w-full rounded-xl border border-gold/10 bg-cream px-4 py-3 text-sm text-brown-dark placeholder:text-brown-dark/40 focus:border-gold focus:outline-none"
+                  placeholder="Tu nombre"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="email"
+                  className="mb-2 block text-sm font-medium text-brown-dark"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full rounded-xl border border-gold/10 bg-cream px-4 py-3 text-sm text-brown-dark placeholder:text-brown-dark/40 focus:border-gold focus:outline-none"
+                  placeholder="tu@email.com"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                htmlFor="telefono"
+                className="mb-2 block text-sm font-medium text-brown-dark"
+              >
+                Teléfono (opcional)
+              </label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                className="w-full rounded-xl border border-gold/10 bg-cream px-4 py-3 text-sm text-brown-dark placeholder:text-brown-dark/40 focus:border-gold focus:outline-none"
+                placeholder="+56 9 1234 5678"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="mensaje"
+                className="mb-2 block text-sm font-medium text-brown-dark"
+              >
+                Mensaje
+              </label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows={5}
+                required
+                className="w-full resize-none rounded-xl border border-gold/10 bg-cream px-4 py-3 text-sm text-brown-dark placeholder:text-brown-dark/40 focus:border-gold focus:outline-none"
+                placeholder="Cuéntanos en qué podemos ayudarte..."
+              />
+            </div>
+            <div className="text-center">
+              <button
+                type="submit"
+                className="rounded-full bg-gold px-10 py-3 text-sm font-semibold text-brown-dark transition-colors hover:bg-gold-light"
+              >
+                Enviar mensaje
+              </button>
+            </div>
+          </form>
+        </FadeIn>
       </section>
 
       {/* Footer */}
-      <footer
-        id="contacto"
-        className="border-t border-gold/10 bg-brown-dark px-6 py-12"
-      >
+      <footer className="border-t border-gold/10 bg-brown-dark px-6 py-12">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
             <div className="flex items-center gap-4">
