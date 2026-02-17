@@ -170,6 +170,7 @@ export default function Home() {
                 image: "/galletas.png",
                 name: "Dulces y Pasteles",
                 desc: "Berlines, cachitos, tortas y pasteles para endulzar tu día. Hechos con recetas que han pasado de generación en generación.",
+                position: "object-top",
               },
             ].map((product) => (
               <div
@@ -181,7 +182,7 @@ export default function Home() {
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover transition-transform hover:scale-105"
+                    className={`object-cover transition-transform hover:scale-105 ${"position" in product ? product.position : ""}`}
                   />
                 </div>
                 <div className="p-6 text-center">
