@@ -52,24 +52,35 @@ const reviews = [
 
 export default function ReviewCarousel() {
   const [page, setPage] = useState(0);
+  const [fading, setFading] = useState(false);
   const totalPages = Math.ceil(reviews.length / 3);
+
+  function changePage(next: number) {
+    setFading(true);
+    setTimeout(() => {
+      setPage(next);
+      setFading(false);
+    }, 300);
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setPage((p) => (p + 1) % totalPages);
+      changePage(page + 1 >= totalPages ? 0 : page + 1);
     }, 5000);
     return () => clearInterval(interval);
-  }, [totalPages]);
+  }, [page, totalPages]);
 
   const visible = reviews.slice(page * 3, page * 3 + 3);
 
   return (
     <div>
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div
+        className={`mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 transition-opacity duration-300 ${fading ? "opacity-0" : "opacity-100"}`}
+      >
         {visible.map((review) => (
           <div
             key={review.name}
-            className="rounded-2xl border border-gold/10 bg-cream p-6 transition-opacity duration-500"
+            className="rounded-2xl border border-gold/10 bg-cream p-6"
           >
             <div className="mb-3 flex items-center gap-1 text-gold">
               {Array.from({ length: review.stars }).map((_, i) => (
@@ -99,7 +110,7 @@ export default function ReviewCarousel() {
         {Array.from({ length: totalPages }).map((_, i) => (
           <button
             key={i}
-            onClick={() => setPage(i)}
+            onClick={() => changePage(i)}
             className={`h-2 rounded-full transition-all ${page === i ? "w-6 bg-gold" : "w-2 bg-gold/30"}`}
             aria-label={`Ver reseñas ${i + 1}`}
           />

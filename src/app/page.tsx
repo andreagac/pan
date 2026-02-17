@@ -4,6 +4,7 @@ import FadeIn from "./components/FadeIn";
 import ContactForm from "./components/ContactForm";
 import ReviewCarousel from "./components/ReviewCarousel";
 import ParallaxHero from "./components/ParallaxHero";
+import AnimatedCounter from "./components/AnimatedCounter";
 
 export default function Home() {
   return (
@@ -127,19 +128,25 @@ export default function Home() {
               </div>
               <div className="mt-10 flex justify-center gap-12">
                 <div className="text-center">
-                  <p className="font-serif text-3xl font-bold text-gold">80+</p>
+                  <p className="font-serif text-3xl font-bold text-gold">
+                    <AnimatedCounter end={80} suffix="+" />
+                  </p>
                   <p className="mt-1 text-sm text-brown-dark/60">
                     Años de tradición
                   </p>
                 </div>
                 <div className="text-center">
-                  <p className="font-serif text-3xl font-bold text-gold">7 días</p>
+                  <p className="font-serif text-3xl font-bold text-gold">
+                    <AnimatedCounter end={7} suffix=" días" />
+                  </p>
                   <p className="mt-1 text-sm text-brown-dark/60">
                     Abiertos a la semana
                   </p>
                 </div>
                 <div className="text-center">
-                  <p className="font-serif text-3xl font-bold text-gold">8+</p>
+                  <p className="font-serif text-3xl font-bold text-gold">
+                    <AnimatedCounter end={8} suffix="+" />
+                  </p>
                   <p className="mt-1 text-sm text-brown-dark/60">
                     Variedades de pan
                   </p>
