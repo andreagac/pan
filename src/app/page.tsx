@@ -84,8 +84,8 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4">
               <div className="overflow-hidden rounded-2xl">
                 <Image
-                  src="/fachada.jpg"
-                  alt="Fachada de Panadería Antofagasta"
+                  src="/esquina.jpg"
+                  alt="Esquina de Antofagasta con San Alfonso"
                   width={400}
                   height={300}
                   className="h-48 w-full object-cover transition-transform hover:scale-105"
@@ -209,7 +209,7 @@ export default function Home() {
             {[
               { image: "/marraquetas.jpg", name: "Marraqueta" },
               { image: "/hallullas.jpg", name: "Hallulla" },
-              { image: "/pan-completo.jpg", name: "Completo (Lengua)" },
+              { image: "/lenguas.jpg", name: "Completo (Lengua)" },
               { image: null, name: "Frica" },
               { image: null, name: "Amasado" },
               { image: null, name: "Molde" },
