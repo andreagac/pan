@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import FadeIn from "./components/FadeIn";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
             className="mb-8 h-auto w-72 drop-shadow-lg md:w-96"
             priority
           />
-          <p className="mx-auto max-w-lg text-lg text-cream/80">
+          <p className="mx-auto max-w-xl text-2xl leading-relaxed text-cream/80">
             Más de 80 años de tradición panadera en Santiago Centro. Pan
             artesanal horneado con amor, como lo hacía la abuela.
           </p>
@@ -407,8 +408,97 @@ export default function Home() {
         </FadeIn>
       </section>
 
+      {/* Reseñas */}
+      <section id="resenas" className="bg-beige px-6 py-24">
+        <FadeIn className="mx-auto max-w-6xl">
+          <div className="text-center">
+            <p className="mb-2 text-sm tracking-[0.3em] text-gold uppercase">
+              Lo que dicen nuestros clientes
+            </p>
+            <h2 className="font-serif text-3xl font-bold text-brown-dark md:text-4xl">
+              Reseñas de Google
+            </h2>
+          </div>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                name: "Claudia Vargas",
+                stars: 5,
+                text: "Una de mis panaderías regalonas, es un regreso a los '80 desde la entrada, música ambiental de esa época, atención amable y rápida en general, pan rico y crujiente. 100% recomendable esta panadería de barrio.",
+              },
+              {
+                name: "D. Igor Woldarsky O.",
+                stars: 5,
+                text: "El pan de muy buen sabor, el integral muy rico, hay galletas de coco de esas que me llevó a la infancia. Las empanadas hay todos los viernes muy ricas, las dobladas son imperdibles.",
+              },
+              {
+                name: "Jose Miguel Figueroa",
+                stars: 5,
+                text: "La atención esmerada del personal. Un asitero haber pasado y conocido sus berlines y el pan sabroso. Me trajo recuerdo de niño cuando vivía en ese sector.",
+              },
+              {
+                name: "Fabiola Morales",
+                stars: 5,
+                text: "Una panadería clásica, pan y pastelería fresca. Personal amable. Muy buenos precios.",
+              },
+              {
+                name: "Alex Staley",
+                stars: 5,
+                text: "Panadería a la antigua, excelente.",
+              },
+              {
+                name: "Antonio Moraga",
+                stars: 5,
+                text: "Encuentras buen pan, cosas pal pan y dulces para la once.",
+              },
+              {
+                name: "Ingrid Fuentes Rios",
+                stars: 5,
+                text: "Buena atención tienen de todo. Comida: 5/5, Servicio: 5/5, Ambiente: 5/5.",
+              },
+              {
+                name: "Katherine Osses",
+                stars: 5,
+                text: "Rico y buenos precios.",
+              },
+              {
+                name: "Salome Rodriguez",
+                stars: 5,
+                text: "Las mejores galletas caseras, una panadería de muchos años.",
+              },
+            ].map((review) => (
+              <div
+                key={review.name}
+                className="rounded-2xl border border-gold/10 bg-cream p-6"
+              >
+                <div className="mb-3 flex items-center gap-1 text-gold">
+                  {Array.from({ length: review.stars }).map((_, i) => (
+                    <svg
+                      key={i}
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-sm leading-relaxed text-brown-dark/70">
+                  &ldquo;{review.text}&rdquo;
+                </p>
+                <p className="mt-4 text-sm font-semibold text-brown-dark">
+                  {review.name}
+                </p>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+      </section>
+
       {/* Contacto */}
-      <section id="contacto" className="bg-beige px-6 py-24">
+      <section id="contacto" className="bg-cream px-6 py-24">
         <FadeIn className="mx-auto max-w-2xl">
           <div className="text-center">
             <p className="mb-2 text-sm tracking-[0.3em] text-gold uppercase">
@@ -422,85 +512,7 @@ export default function Home() {
               Déjanos tu mensaje.
             </p>
           </div>
-          <form
-            action="https://formspree.io/f/xdalgrpv"
-            method="POST"
-            className="mt-12 space-y-6"
-          >
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div>
-                <label
-                  htmlFor="nombre"
-                  className="mb-2 block text-sm font-medium text-brown-dark"
-                >
-                  Nombre
-                </label>
-                <input
-                  type="text"
-                  id="nombre"
-                  name="nombre"
-                  required
-                  className="w-full rounded-xl border border-gold/10 bg-cream px-4 py-3 text-sm text-brown-dark placeholder:text-brown-dark/40 focus:border-gold focus:outline-none"
-                  placeholder="Tu nombre"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="mb-2 block text-sm font-medium text-brown-dark"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full rounded-xl border border-gold/10 bg-cream px-4 py-3 text-sm text-brown-dark placeholder:text-brown-dark/40 focus:border-gold focus:outline-none"
-                  placeholder="tu@email.com"
-                />
-              </div>
-            </div>
-            <div>
-              <label
-                htmlFor="telefono"
-                className="mb-2 block text-sm font-medium text-brown-dark"
-              >
-                Teléfono (opcional)
-              </label>
-              <input
-                type="tel"
-                id="telefono"
-                name="telefono"
-                className="w-full rounded-xl border border-gold/10 bg-cream px-4 py-3 text-sm text-brown-dark placeholder:text-brown-dark/40 focus:border-gold focus:outline-none"
-                placeholder="+56 9 1234 5678"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="mensaje"
-                className="mb-2 block text-sm font-medium text-brown-dark"
-              >
-                Mensaje
-              </label>
-              <textarea
-                id="mensaje"
-                name="mensaje"
-                rows={5}
-                required
-                className="w-full resize-none rounded-xl border border-gold/10 bg-cream px-4 py-3 text-sm text-brown-dark placeholder:text-brown-dark/40 focus:border-gold focus:outline-none"
-                placeholder="Cuéntanos en qué podemos ayudarte..."
-              />
-            </div>
-            <div className="text-center">
-              <button
-                type="submit"
-                className="rounded-full bg-gold px-10 py-3 text-sm font-semibold text-brown-dark transition-colors hover:bg-gold-light"
-              >
-                Enviar mensaje
-              </button>
-            </div>
-          </form>
+          <ContactForm />
         </FadeIn>
       </section>
 
