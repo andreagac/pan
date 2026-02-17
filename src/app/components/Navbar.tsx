@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const links = [
@@ -13,6 +13,27 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
+
+  useEffect(() => {
+    const sections = links.map((l) =>
+      document.querySelector(l.href) as HTMLElement | null
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActive(`#${entry.target.id}`);
+          }
+        }
+      },
+      { rootMargin: "-50% 0px -50% 0px" }
+    );
+
+    sections.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-gold/20 bg-cream/95 backdrop-blur-sm">
@@ -32,7 +53,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="transition-colors hover:text-gold"
+              className={`transition-colors hover:text-gold ${active === link.href ? "text-gold" : ""}`}
             >
               {link.label}
             </a>
@@ -64,7 +85,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="transition-colors hover:text-gold"
+                className={`transition-colors hover:text-gold ${active === link.href ? "text-gold" : ""}`}
               >
                 {link.label}
               </a>

@@ -2,6 +2,8 @@ import Image from "next/image";
 import Navbar from "./components/Navbar";
 import FadeIn from "./components/FadeIn";
 import ContactForm from "./components/ContactForm";
+import ReviewCarousel from "./components/ReviewCarousel";
+import ParallaxHero from "./components/ParallaxHero";
 
 export default function Home() {
   return (
@@ -11,13 +13,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-brown-dark px-6 pt-20 text-center">
-        <Image
-          src="/marraquetas.jpg"
-          alt="Marraquetas recién horneadas"
-          fill
-          className="object-cover opacity-30"
-          priority
-        />
+        <ParallaxHero />
         <div className="relative z-10 flex flex-col items-center">
           <Image
             src="/logo.png"
@@ -244,7 +240,9 @@ export default function Home() {
                   </div>
                 ) : (
                   <div className="flex h-32 items-center justify-center bg-beige">
-                    <span className="text-4xl">{"\uD83C\uDF5E"}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-gold/40">
+                      <path d="M12 2C6.5 2 2 6 2 10.5c0 2 1 4 2.5 5.5C3.5 17.5 2 20 2 22h20c0-2-1.5-4.5-2.5-6C21 14.5 22 12.5 22 10.5 22 6 17.5 2 12 2z" />
+                    </svg>
                   </div>
                 )}
                 <p className="py-3 text-center font-serif text-sm font-semibold text-brown-dark">
@@ -432,81 +430,7 @@ export default function Home() {
               Reseñas de Google
             </h2>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                name: "Claudia Vargas",
-                stars: 5,
-                text: "Una de mis panaderías regalonas, es un regreso a los '80 desde la entrada, música ambiental de esa época, atención amable y rápida en general, pan rico y crujiente. 100% recomendable esta panadería de barrio.",
-              },
-              {
-                name: "D. Igor Woldarsky O.",
-                stars: 5,
-                text: "El pan de muy buen sabor, el integral muy rico, hay galletas de coco de esas que me llevó a la infancia. Las empanadas hay todos los viernes muy ricas, las dobladas son imperdibles.",
-              },
-              {
-                name: "Jose Miguel Figueroa",
-                stars: 5,
-                text: "La atención esmerada del personal. Un asitero haber pasado y conocido sus berlines y el pan sabroso. Me trajo recuerdo de niño cuando vivía en ese sector.",
-              },
-              {
-                name: "Fabiola Morales",
-                stars: 5,
-                text: "Una panadería clásica, pan y pastelería fresca. Personal amable. Muy buenos precios.",
-              },
-              {
-                name: "Alex Staley",
-                stars: 5,
-                text: "Panadería a la antigua, excelente.",
-              },
-              {
-                name: "Antonio Moraga",
-                stars: 5,
-                text: "Encuentras buen pan, cosas pal pan y dulces para la once.",
-              },
-              {
-                name: "Ingrid Fuentes Rios",
-                stars: 5,
-                text: "Buena atención tienen de todo. Comida: 5/5, Servicio: 5/5, Ambiente: 5/5.",
-              },
-              {
-                name: "Katherine Osses",
-                stars: 5,
-                text: "Rico y buenos precios.",
-              },
-              {
-                name: "Salome Rodriguez",
-                stars: 5,
-                text: "Las mejores galletas caseras, una panadería de muchos años.",
-              },
-            ].map((review) => (
-              <div
-                key={review.name}
-                className="rounded-2xl border border-gold/10 bg-cream p-6"
-              >
-                <div className="mb-3 flex items-center gap-1 text-gold">
-                  {Array.from({ length: review.stars }).map((_, i) => (
-                    <svg
-                      key={i}
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-sm leading-relaxed text-brown-dark/70">
-                  &ldquo;{review.text}&rdquo;
-                </p>
-                <p className="mt-4 text-sm font-semibold text-brown-dark">
-                  {review.name}
-                </p>
-              </div>
-            ))}
-          </div>
+          <ReviewCarousel />
         </FadeIn>
       </section>
 
