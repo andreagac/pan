@@ -93,7 +93,7 @@ export default function Home() {
               </div>
               <div className="overflow-hidden rounded-2xl">
                 <Image
-                  src="/horno.png"
+                  src="/horno.webp"
                   alt="Panaderos trabajando en el horno"
                   width={400}
                   height={300}
@@ -129,11 +129,23 @@ export default function Home() {
                   fresco y calentito en tu mesa.
                 </p>
               </div>
-              <div className="mt-10">
+              <div className="mt-10 flex justify-center gap-12">
                 <div className="text-center">
                   <p className="font-serif text-3xl font-bold text-gold">80+</p>
                   <p className="mt-1 text-sm text-brown-dark/60">
                     Años de tradición
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p className="font-serif text-3xl font-bold text-gold">7 días</p>
+                  <p className="mt-1 text-sm text-brown-dark/60">
+                    Abiertos a la semana
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p className="font-serif text-3xl font-bold text-gold">8+</p>
+                  <p className="mt-1 text-sm text-brown-dark/60">
+                    Variedades de pan
                   </p>
                 </div>
               </div>
@@ -162,12 +174,12 @@ export default function Home() {
                 desc: "Marraquetas, hallullas, frica, amasado y más. Horneado varias veces al día para que siempre tengas pan calentito y crujiente.",
               },
               {
-                image: "/empanadas.png",
+                image: "/empanadas.webp",
                 name: "Empanadas de Pino",
                 desc: "Receta familiar con carne, cebolla, huevo y aceituna. Preparadas a mano como manda la tradición chilena.",
               },
               {
-                image: "/galletas.png",
+                image: "/galletas.webp",
                 name: "Dulces y Pasteles",
                 desc: "Berlines, cachitos, tortas y pasteles para endulzar tu día. Hechos con recetas que han pasado de generación en generación.",
                 position: "object-top",
@@ -247,7 +259,7 @@ export default function Home() {
       {/* Reparto */}
       <section id="reparto" className="relative overflow-hidden bg-brown-dark px-6 py-24">
         <Image
-          src="/panadero.png"
+          src="/panadero.webp"
           alt="Panadero trabajando"
           fill
           className="object-cover opacity-20"
