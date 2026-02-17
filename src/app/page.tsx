@@ -39,7 +39,7 @@ export default function Home() {
               href="#reparto"
               className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-brown-dark transition-colors hover:bg-gold-light"
             >
-              Reparto comercial
+              Reparto a almacenes
             </a>
             <a
               href="#horario"
@@ -226,11 +226,11 @@ export default function Home() {
               { image: "/marraquetas.jpg", name: "Marraqueta" },
               { image: "/hallullas.jpg", name: "Hallulla" },
               { image: "/lenguas.jpg", name: "Completo (Lengua)" },
-              { image: null, name: "Frica" },
-              { image: null, name: "Amasado" },
-              { image: null, name: "Molde" },
-              { image: null, name: "Especial" },
-              { image: null, name: "Centeno" },
+              { image: "/frica.png", name: "Frica" },
+              { image: "/amasado.png", name: "Amasado" },
+              { image: "/molde.png", name: "Molde" },
+              { image: "/especial.png", name: "Especial" },
+              { image: "/centeno.png", name: "Centeno" },
             ].map((pan) => (
               <div
                 key={pan.name}
