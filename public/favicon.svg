@@ -1,14 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="5" fill="#5C3317"/>
-  <rect x="2.5" y="2.5" width="27" height="27" rx="3.5" fill="none" stroke="#C8914A" stroke-width="1" opacity="0.55"/>
-  <text
-    x="16"
-    y="22"
-    font-family="Georgia, 'Times New Roman', serif"
-    font-weight="700"
-    font-size="14"
-    text-anchor="middle"
-    fill="#F0DEB4"
-    letter-spacing="0.5"
-  >PA</text>
+  <!-- Fondo redondeado marrón cálido -->
+  <rect width="32" height="32" rx="6" fill="#7A3B1E"/>
+
+  <!-- Pan/marraqueta: forma ovalada principal -->
+  <ellipse cx="16" cy="18" rx="11" ry="7" fill="#D4993F"/>
+
+  <!-- Línea central del pan (característica de la marraqueta) -->
+  <line x1="5.5" y1="18" x2="26.5" y2="18" stroke="#C07830" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Brillo superior del pan -->
+  <ellipse cx="16" cy="14" rx="7" ry="3.5" fill="#E8B45A" opacity="0.7"/>
+
+  <!-- Pequeño corte en la corteza (textura artesanal) -->
+  <path d="M11 14.5 Q16 12.5 21 14.5" stroke="#C07830" stroke-width="0.8" stroke-linecap="round" fill="none"/>
 </svg>
