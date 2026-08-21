@@ -177,7 +177,7 @@ export default function Home() {
                 desc: "Marraquetas, hallullas, frica, amasado y más. Horneado varias veces al día para que siempre tengas pan calentito y crujiente.",
               },
               {
-                image: "/empanadas.webp",
+                image: "/empanadas.jpg",
                 name: "Empanadas de Pino",
                 desc: "Receta familiar con carne, cebolla, huevo y aceituna. Preparadas a mano como manda la tradición chilena.",
               },
@@ -226,11 +226,11 @@ export default function Home() {
               { image: "/marraquetas.jpg", name: "Marraqueta" },
               { image: "/hallullas.jpg", name: "Hallulla" },
               { image: "/lenguas.jpg", name: "Completo (Lengua)" },
-              { image: "/frica.png", name: "Frica" },
-              { image: "/amasado.png", name: "Amasado" },
-              { image: "/molde.png", name: "Molde" },
-              { image: "/especial.png", name: "Especial" },
-              { image: "/centeno.png", name: "Centeno" },
+              { image: "", name: "Frica" },
+              { image: "", name: "Amasado" },
+              { image: "", name: "Molde" },
+              { image: "", name: "Especial" },
+              { image: "", name: "Centeno" },
             ].map((pan) => (
               <div
                 key={pan.name}
