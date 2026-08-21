@@ -90,10 +90,17 @@ const jsonLd = {
       opens: "06:30",
       closes: "20:30",
     },
+    // El domingo se atiende con colación: cierra a las 15:00 y reabre a las 16:00.
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: "Sunday",
       opens: "07:30",
+      closes: "15:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Sunday",
+      opens: "16:00",
       closes: "19:00",
     },
   ],

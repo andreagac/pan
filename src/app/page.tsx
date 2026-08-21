@@ -112,7 +112,7 @@ export default function Home() {
                 <p>
                   Somos Panadería Antofagasta, una panadería tradicional de la
                   comuna de Santiago. Desde 1940 junto a los vecinos del barrio.
-                  Ya son casi ocho décadas atendiendo en la esquina San Alfonso
+                  Ya son más de ocho décadas atendiendo en la esquina San Alfonso
                   con Antofagasta.
                 </p>
                 <p>
