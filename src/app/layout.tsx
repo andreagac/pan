@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Panadería Antofagasta — Más de 80 años de tradición panadera",
   description:
-    "Panadería familiar en Santiago Centro con más de 80 años de tradición. Marraquetas, empanadas de pino, pan fresco y dulces artesanales. Antofagasta 2899, Santiago Centro.",
+    "Panadería familiar en Santiago Centro con más de 80 años de tradición. Marraquetas, pan amasado, empanadas de pino, sopaipillas, pastelería casera y fiambrería. Antofagasta 2899, Santiago Centro.",
   metadataBase: new URL("https://panaderiaantofagasta.cl"),
   alternates: {
     canonical: "/",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Panadería Antofagasta — Más de 80 años de tradición panadera",
     description:
-      "Panadería familiar en Santiago Centro con más de 80 años de tradición. Marraquetas, empanadas de pino, pan fresco y dulces artesanales.",
+      "Panadería familiar en Santiago Centro con más de 80 años de tradición. Marraquetas, pan amasado, empanadas de pino, sopaipillas y pastelería casera.",
     url: "https://panaderiaantofagasta.cl",
     siteName: "Panadería Antofagasta",
     locale: "es_CL",
@@ -61,7 +61,7 @@ const jsonLd = {
   "@type": "Bakery",
   name: "Panadería Antofagasta",
   description:
-    "Panadería familiar en Santiago Centro con más de 80 años de tradición. Marraquetas, empanadas de pino, pan fresco y dulces artesanales.",
+    "Panadería familiar en Santiago Centro con más de 80 años de tradición. Marraquetas, pan amasado, empanadas de pino, sopaipillas y pastelería casera.",
   url: "https://panaderiaantofagasta.cl",
   telephone: "+56224036861",
   address: {
