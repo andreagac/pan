@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import IconoWhatsApp from "./IconoWhatsApp";
+import { WHATSAPP_LINK, WHATSAPP_VISIBLE } from "../contacto";
 
 const links = [
   { href: "#nosotros", label: "Nosotros" },
@@ -48,7 +50,7 @@ export default function Navbar() {
           />
         </a>
         {/* Desktop links */}
-        <div className="hidden gap-6 text-sm font-medium text-brown-dark/80 md:flex">
+        <div className="hidden items-center gap-6 text-sm font-medium text-brown-dark/80 md:flex">
           {links.map((link) => (
             <a
               key={link.href}
@@ -58,23 +60,46 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          {/* El botón de pedidos queda siempre a mano, también al bajar */}
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-wa px-4 py-2 font-semibold text-white transition-colors hover:bg-wa-dark"
+          >
+            <IconoWhatsApp className="h-4 w-4" />
+            Pedidos
+          </a>
         </div>
-        {/* Hamburger button */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="flex flex-col gap-1.5 md:hidden"
-          aria-label={open ? "Cerrar menú" : "Abrir menú"}
-        >
-          <span
-            className={`block h-0.5 w-6 bg-brown-dark transition-transform ${open ? "translate-y-2 rotate-45" : ""}`}
-          />
-          <span
-            className={`block h-0.5 w-6 bg-brown-dark transition-opacity ${open ? "opacity-0" : ""}`}
-          />
-          <span
-            className={`block h-0.5 w-6 bg-brown-dark transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`}
-          />
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          {/* En el teléfono el botón va siempre visible, no escondido en el menú */}
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Pedidos por WhatsApp al ${WHATSAPP_VISIBLE}`}
+            className="inline-flex items-center gap-2 rounded-full bg-wa px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-wa-dark"
+          >
+            <IconoWhatsApp className="h-4 w-4" />
+            Pedidos
+          </a>
+          {/* Hamburger button */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="flex flex-col gap-1.5"
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          >
+            <span
+              className={`block h-0.5 w-6 bg-brown-dark transition-transform ${open ? "translate-y-2 rotate-45" : ""}`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-brown-dark transition-opacity ${open ? "opacity-0" : ""}`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-brown-dark transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`}
+            />
+          </button>
+        </div>
       </div>
       {/* Mobile menu */}
       {open && (

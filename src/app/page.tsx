@@ -5,6 +5,13 @@ import ContactForm from "./components/ContactForm";
 import ReviewCarousel from "./components/ReviewCarousel";
 import ParallaxHero from "./components/ParallaxHero";
 import AnimatedCounter from "./components/AnimatedCounter";
+import IconoWhatsApp from "./components/IconoWhatsApp";
+import {
+  WHATSAPP_LINK,
+  WHATSAPP_VISIBLE,
+  TELEFONO_FIJO_LINK,
+  TELEFONO_FIJO_VISIBLE,
+} from "./contacto";
 
 export default function Home() {
   return (
@@ -28,22 +35,42 @@ export default function Home() {
             Más de 80 años de tradición panadera en Santiago Centro. Pan
             artesanal horneado con amor, como lo hacía la abuela.
           </p>
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          {/* Los pedidos son la acción principal del sitio: va sola y con el
+              número a la vista. Los otros tres pasan a contorno, porque si los
+              cuatro son dorados sólidos ninguno destaca. */}
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-10 inline-flex items-center gap-3 rounded-full bg-wa px-8 py-4 text-base font-semibold text-white shadow-lg shadow-black/25 transition-colors hover:bg-wa-dark"
+          >
+            <IconoWhatsApp className="h-6 w-6" />
+            Haz tu pedido por WhatsApp
+          </a>
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 font-serif text-2xl font-bold tracking-wide text-cream transition-colors hover:text-gold md:text-3xl"
+          >
+            {WHATSAPP_VISIBLE}
+          </a>
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
               href="#productos"
-              className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-brown-dark transition-colors hover:bg-gold-light"
+              className="rounded-full border-2 border-cream/30 px-8 py-3 text-sm font-semibold text-cream transition-colors hover:border-gold hover:text-gold"
             >
               Ver nuestros productos
             </a>
             <a
               href="#reparto"
-              className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-brown-dark transition-colors hover:bg-gold-light"
+              className="rounded-full border-2 border-cream/30 px-8 py-3 text-sm font-semibold text-cream transition-colors hover:border-gold hover:text-gold"
             >
               Reparto a almacenes
             </a>
             <a
               href="#horario"
-              className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-brown-dark transition-colors hover:bg-gold-light"
+              className="rounded-full border-2 border-cream/30 px-8 py-3 text-sm font-semibold text-cream transition-colors hover:border-gold hover:text-gold"
             >
               Visítanos
             </a>
@@ -304,10 +331,19 @@ export default function Home() {
           </div>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="tel:+56224036861"
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-wa px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-wa-dark"
+            >
+              <IconoWhatsApp className="h-5 w-5" />
+              Pedir por WhatsApp
+            </a>
+            <a
+              href={TELEFONO_FIJO_LINK}
               className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-brown-dark transition-colors hover:bg-gold-light"
             >
-              Llamar: (2) 2403 6861
+              Llamar: {TELEFONO_FIJO_VISIBLE}
             </a>
             <a
               href="https://instagram.com/panaderia_antofagasta"
@@ -385,12 +421,28 @@ export default function Home() {
                   </a>
                 </div>
                 <div>
-                  <p className="mb-1 font-medium text-brown-dark">Teléfono</p>
+                  <p className="mb-1 font-medium text-brown-dark">
+                    Pedidos por WhatsApp
+                  </p>
                   <a
-                    href="tel:+56224036861"
+                    href={WHATSAPP_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-semibold text-brown-dark transition-colors hover:text-gold"
+                  >
+                    <IconoWhatsApp className="h-4 w-4 text-wa" />
+                    {WHATSAPP_VISIBLE}
+                  </a>
+                </div>
+                <div>
+                  <p className="mb-1 font-medium text-brown-dark">
+                    Teléfono del local
+                  </p>
+                  <a
+                    href={TELEFONO_FIJO_LINK}
                     className="text-brown-dark/70 transition-colors hover:text-gold"
                   >
-                    (2) 2403 6861
+                    {TELEFONO_FIJO_VISIBLE}
                   </a>
                 </div>
                 <div>
@@ -491,10 +543,19 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-6 text-sm text-cream/60">
               <a
-                href="tel:+56224036861"
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 transition-colors hover:text-gold"
+              >
+                <IconoWhatsApp className="h-4 w-4" />
+                {WHATSAPP_VISIBLE}
+              </a>
+              <a
+                href={TELEFONO_FIJO_LINK}
                 className="transition-colors hover:text-gold"
               >
-                (2) 2403 6861
+                {TELEFONO_FIJO_VISIBLE}
               </a>
               <a
                 href="https://instagram.com/panaderia_antofagasta"

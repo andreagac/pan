@@ -9,6 +9,10 @@
   --cream: #FFF8F0;
   --gold: #C4944A;
   --gold-light: #D4A853;
+  /* El verde del canal de pedidos. No es de la paleta de la marca a propósito:
+     es la señal que la gente ya reconoce sin leer. */
+  --wa: #25D366;
+  --wa-dark: #1EBE5B;
 }
 
 @theme inline {
@@ -20,6 +24,8 @@
   --color-cream: var(--cream);
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
+  --color-wa: var(--wa);
+  --color-wa-dark: var(--wa-dark);
   --font-sans: var(--font-geist-sans);
   --font-serif: var(--font-playfair);
 }
