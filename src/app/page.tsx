@@ -2,6 +2,7 @@ import Image from "next/image";
 import Navbar from "./components/Navbar";
 import FadeIn from "./components/FadeIn";
 import ContactForm from "./components/ContactForm";
+import PreguntasEmpanadas from "./components/PreguntasEmpanadas";
 import ReviewCarousel from "./components/ReviewCarousel";
 import ParallaxHero from "./components/ParallaxHero";
 import AnimatedCounter from "./components/AnimatedCounter";
@@ -293,6 +294,95 @@ export default function Home() {
             y <strong className="font-semibold text-brown-dark">rotisería</strong> para que salgas
             con la once resuelta.
           </p>
+        </FadeIn>
+      </section>
+
+      {/* Empanadas — preguntas frecuentes.
+          Va apenas terminan los productos porque desde el premio es lo que
+          viene a buscar casi toda la gente que entra al sitio. */}
+      <section id="empanadas" className="bg-cream px-6 py-24">
+        <FadeIn className="mx-auto max-w-4xl">
+          <div className="text-center">
+            <p className="mb-2 text-sm tracking-[0.3em] text-gold uppercase">
+              Pedidos de empanadas
+            </p>
+            <h2 className="font-serif text-3xl font-bold text-brown-dark md:text-4xl">
+              Preguntas Frecuentes
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-brown-dark/60">
+              Ganamos el concurso La Mejor Empanada Dieciochera 2026 y desde
+              entonces nos escriben mucho. Acá está contestado de una vez lo
+              que más nos preguntan, para que no tengas que esperar respuesta.
+            </p>
+          </div>
+
+          {/* La ficha rápida: lo que la mayoría necesita saber sin desplegar nada. */}
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                dato: "$2.300",
+                titulo: "Empanada de pino",
+                detalle: "$2.000 cada una desde 12",
+              },
+              {
+                dato: "$2.100",
+                titulo: "Empanada de queso",
+                detalle: "Solo por encargo, mínimo una docena",
+              },
+              {
+                dato: "Retiro",
+                titulo: "Sin despacho",
+                detalle: "Se retiran en Antofagasta 2899",
+              },
+              {
+                dato: "50%",
+                titulo: "Para reservar",
+                detalle: "De abono al encargar",
+              },
+            ].map((item) => (
+              <div
+                key={item.titulo}
+                className="rounded-2xl border border-gold/10 bg-beige p-6 text-center"
+              >
+                <p className="font-serif text-3xl font-bold text-gold">
+                  {item.dato}
+                </p>
+                <p className="mt-2 font-serif text-base font-semibold text-brown-dark">
+                  {item.titulo}
+                </p>
+                <p className="mt-1 text-xs leading-relaxed text-brown-dark/60">
+                  {item.detalle}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <PreguntasEmpanadas />
+
+          {/* Aviso honesto: es lo que evita que alguien llegue y no encuentre. */}
+          <p className="mx-auto mt-8 max-w-2xl text-center text-sm leading-relaxed text-brown-dark/60">
+            Las empanadas de pino se acaban durante el día y no podemos
+            asegurarte que queden. Si las necesitas para una fecha, lo seguro es
+            encargarlas.
+          </p>
+
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-wa px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition-colors hover:bg-wa-dark"
+            >
+              <IconoWhatsApp className="h-5 w-5" />
+              Encargar por WhatsApp
+            </a>
+            <a
+              href={TELEFONO_FIJO_LINK}
+              className="rounded-full border-2 border-gold/40 px-7 py-3 text-sm font-semibold text-brown-dark transition-colors hover:border-gold hover:text-gold"
+            >
+              Llamar al {TELEFONO_FIJO_VISIBLE}
+            </a>
+          </div>
         </FadeIn>
       </section>
 

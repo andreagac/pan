@@ -8,6 +8,7 @@ import { WHATSAPP_LINK, WHATSAPP_VISIBLE } from "../contacto";
 const links = [
   { href: "#nosotros", label: "Nosotros" },
   { href: "#productos", label: "Productos" },
+  { href: "#empanadas", label: "Empanadas" },
   { href: "#reparto", label: "Reparto" },
   { href: "#horario", label: "Horario" },
   { href: "#contacto", label: "Contacto" },
