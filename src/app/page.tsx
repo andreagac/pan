@@ -6,6 +6,8 @@ import ReviewCarousel from "./components/ReviewCarousel";
 import ParallaxHero from "./components/ParallaxHero";
 import AnimatedCounter from "./components/AnimatedCounter";
 import IconoWhatsApp from "./components/IconoWhatsApp";
+import AvisoEncargos from "./components/AvisoEncargos";
+import { AVISO_ENCARGOS, avisoActivo } from "./aviso";
 import {
   WHATSAPP_LINK,
   WHATSAPP_VISIBLE,
@@ -13,14 +15,21 @@ import {
   TELEFONO_FIJO_VISIBLE,
 } from "./contacto";
 
+// La página se regenera cada hora para que el aviso de arriba se apague solo
+// cuando venza, sin que nadie tenga que volver a publicar.
+export const revalidate = 3600;
+
 export default function Home() {
+  const aviso = avisoActivo();
   return (
     <div className="min-h-screen">
       {/* Navbar */}
-      <Navbar />
+      <Navbar aviso={aviso ? <AvisoEncargos /> : null} />
 
       {/* Hero */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-brown-dark px-6 pt-20 text-center">
+      <section
+        className={`relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-brown-dark px-6 text-center ${aviso ? "pt-32" : "pt-20"}`}
+      >
         <ParallaxHero />
         <div className="relative z-10 flex flex-col items-center">
           <Image
@@ -389,6 +398,7 @@ export default function Home() {
                     day: "Domingo",
                     hours: "7:30 — 15:00 / 16:00 — 19:00",
                   },
+                  ...(aviso ? [AVISO_ENCARGOS.horario] : []),
                 ].map((row) => (
                   <div
                     key={row.day}
