@@ -213,9 +213,13 @@ export default function Home() {
                 desc: "Marraquetas, hallullas, frica, amasado y más. Horneado varias veces al día para que siempre tengas pan calentito y crujiente.",
               },
               {
-                image: "/empanadas.jpg",
+                image: "/empanada-pino.jpg",
                 name: "Empanadas de Pino",
                 desc: "Receta familiar con carne, cebolla, huevo y aceituna. Preparadas a mano como manda la tradición chilena.",
+                // La foto es un primer plano vertical: recortada al centro se ve
+                // solo la panza dorada. Subiendo el encuadre entra el repulgue y
+                // el canasto, y ahí sí se lee que es una empanada.
+                position: "object-[center_28%]",
               },
               {
                 image: "/galletas.webp",
