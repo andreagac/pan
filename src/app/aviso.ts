@@ -9,7 +9,7 @@ const VENCE = new Date("2026-09-20T00:00:00-03:00");
 
 export const AVISO_ENCARGOS = {
   texto:
-    "Hasta el 19 de septiembre no estamos tomando encargos. El local atiende normal hasta el jueves 17; el 18 y 19 estamos cerrados.",
+    "Hasta el 19 de septiembre no estamos tomando encargos de empanadas. El local atiende normal hasta el jueves 17; el 18 y 19 estamos cerrados.",
   /** Fila que se suma a la tabla de horario mientras el aviso esté activo. */
   horario: { day: "18 y 19 de septiembre", hours: "Cerrado" },
 };
