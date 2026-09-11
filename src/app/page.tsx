@@ -7,6 +7,7 @@ import ParallaxHero from "./components/ParallaxHero";
 import AnimatedCounter from "./components/AnimatedCounter";
 import IconoWhatsApp from "./components/IconoWhatsApp";
 import AvisoEncargos from "./components/AvisoEncargos";
+import ModalAviso from "./components/ModalAviso";
 import { AVISO_ENCARGOS, avisoActivo } from "./aviso";
 import {
   WHATSAPP_LINK,
@@ -23,6 +24,8 @@ export default function Home() {
   const aviso = avisoActivo();
   return (
     <div className="min-h-screen">
+      {/* Ventana de aviso al entrar, mientras dure el "sin cupos" */}
+      {aviso && <ModalAviso />}
       {/* Navbar */}
       <Navbar aviso={aviso ? <AvisoEncargos /> : null} />
 
