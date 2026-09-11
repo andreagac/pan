@@ -104,6 +104,17 @@ const jsonLd = {
       closes: "19:00",
     },
   ],
+  // Cierre de Fiestas Patrias 2026. Google lo lee como horario especial y
+  // deja de aplicar solo cuando pasa la fecha.
+  specialOpeningHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      validFrom: "2026-09-18",
+      validThrough: "2026-09-19",
+      opens: "00:00",
+      closes: "00:00",
+    },
+  ],
   sameAs: [
     "https://instagram.com/panaderia_antofagasta",
     "https://web.facebook.com/PanaderiaAntofagasta/",
