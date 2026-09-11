@@ -28,7 +28,7 @@ export default function Home() {
 
       {/* Hero */}
       <section
-        className={`relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-brown-dark px-6 text-center ${aviso ? "pt-32" : "pt-20"}`}
+        className={`relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-brown-dark px-6 text-center ${aviso ? "pt-40 sm:pt-36" : "pt-20"}`}
       >
         <ParallaxHero />
         <div className="relative z-10 flex flex-col items-center">

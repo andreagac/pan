@@ -7,7 +7,7 @@ export default function AvisoEncargos() {
   return (
     <div
       role="status"
-      className="bg-brown-dark px-4 py-2 text-center text-xs leading-snug text-cream sm:text-sm"
+      className="bg-brown-dark px-4 py-3 text-center text-sm leading-snug text-cream sm:text-base"
     >
       <span className="mr-2 font-semibold tracking-[0.2em] text-gold uppercase">
         Aviso
