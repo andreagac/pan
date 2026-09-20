@@ -47,7 +47,7 @@ export default function Home() {
             Más de 80 años de tradición panadera en Santiago Centro. Pan
             artesanal horneado con amor, como lo hacía la abuela.
           </p>
-          {/* Los pedidos son la acción principal del sitio: va sola y con el
+          {/* El WhatsApp es la acción principal del sitio: va sola y con el
               número a la vista. Los otros tres pasan a contorno, porque si los
               cuatro son dorados sólidos ninguno destaca. */}
           <a
@@ -57,7 +57,7 @@ export default function Home() {
             className="mt-10 inline-flex items-center gap-3 rounded-full bg-wa px-8 py-4 text-base font-semibold text-white shadow-lg shadow-black/25 transition-colors hover:bg-wa-dark"
           >
             <IconoWhatsApp className="h-6 w-6" />
-            Haz tu pedido por WhatsApp
+            Escríbenos por WhatsApp
           </a>
           <a
             href={WHATSAPP_LINK}
@@ -301,14 +301,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-
-          {/* Lo que también hay en el local y que la gente busca por separado */}
-          <p className="mx-auto mt-12 max-w-2xl text-center leading-relaxed text-brown-dark/60">
-            Y además de pan: <strong className="font-semibold text-brown-dark">sopaipillas</strong>{" "}
-            para los días fríos, <strong className="font-semibold text-brown-dark">fiambrería</strong>{" "}
-            y <strong className="font-semibold text-brown-dark">rotisería</strong> para que salgas
-            con la once resuelta.
-          </p>
         </FadeIn>
       </section>
 
@@ -353,7 +345,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 rounded-full bg-wa px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-wa-dark"
             >
               <IconoWhatsApp className="h-5 w-5" />
-              Pedir por WhatsApp
+              Consultar por WhatsApp
             </a>
             <a
               href={TELEFONO_FIJO_LINK}
@@ -439,7 +431,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="mb-1 font-medium text-brown-dark">
-                    Pedidos por WhatsApp
+                    WhatsApp
                   </p>
                   <a
                     href={WHATSAPP_LINK}
