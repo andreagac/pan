@@ -301,14 +301,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-
-          {/* Lo que también hay en el local y que la gente busca por separado */}
-          <p className="mx-auto mt-12 max-w-2xl text-center leading-relaxed text-brown-dark/60">
-            Y además de pan: <strong className="font-semibold text-brown-dark">sopaipillas</strong>{" "}
-            para los días fríos, <strong className="font-semibold text-brown-dark">fiambrería</strong>{" "}
-            y <strong className="font-semibold text-brown-dark">rotisería</strong> para que salgas
-            con la once resuelta.
-          </p>
         </FadeIn>
       </section>
 
