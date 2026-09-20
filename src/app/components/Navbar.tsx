@@ -61,7 +61,7 @@ export default function Navbar({ aviso }: { aviso?: React.ReactNode }) {
               {link.label}
             </a>
           ))}
-          {/* El botón de pedidos queda siempre a mano, también al bajar */}
+          {/* El botón de WhatsApp queda siempre a mano, también al bajar */}
           <a
             href={WHATSAPP_LINK}
             target="_blank"
@@ -69,7 +69,7 @@ export default function Navbar({ aviso }: { aviso?: React.ReactNode }) {
             className="inline-flex items-center gap-2 rounded-full bg-wa px-4 py-2 font-semibold text-white transition-colors hover:bg-wa-dark"
           >
             <IconoWhatsApp className="h-4 w-4" />
-            Pedidos
+            WhatsApp
           </a>
         </div>
         <div className="flex items-center gap-4 md:hidden">
@@ -78,11 +78,11 @@ export default function Navbar({ aviso }: { aviso?: React.ReactNode }) {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Pedidos por WhatsApp al ${WHATSAPP_VISIBLE}`}
+            aria-label={`Escríbenos por WhatsApp al ${WHATSAPP_VISIBLE}`}
             className="inline-flex items-center gap-2 rounded-full bg-wa px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-wa-dark"
           >
             <IconoWhatsApp className="h-4 w-4" />
-            Pedidos
+            WhatsApp
           </a>
           {/* Hamburger button */}
           <button

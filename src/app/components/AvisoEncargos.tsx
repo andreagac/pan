@@ -1,7 +1,7 @@
 import { AVISO_ENCARGOS } from "../aviso";
 
 // Franja angosta pegada arriba de la barra. Café oscuro sobre la barra crema
-// para que se lea sin competir con el botón de pedidos, que sigue igual: la
+// para que se lea sin competir con el botón de WhatsApp, que sigue igual: la
 // gente sigue escribiendo por otras cosas y comprando en vitrina.
 export default function AvisoEncargos() {
   return (
