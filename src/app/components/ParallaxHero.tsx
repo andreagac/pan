@@ -20,10 +20,10 @@ export default function ParallaxHero() {
   return (
     <div ref={imgRef} className="absolute inset-0">
       <Image
-        src="/portada-horno.jpg"
-        alt="Pan horneándose en el horno de la panadería"
+        src="/marraquetas.jpg"
+        alt="Marraquetas recién horneadas"
         fill
-        className="object-cover object-[center_38%] opacity-30"
+        className="object-cover opacity-30"
         priority
       />
     </div>
