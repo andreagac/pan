@@ -120,8 +120,8 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4">
               <div className="overflow-hidden rounded-2xl">
                 <Image
-                  src="/esquina.jpg"
-                  alt="Esquina de Antofagasta con San Alfonso"
+                  src="/esquina-fachada.jpg"
+                  alt="Fachada de la panadería en la esquina de Antofagasta con San Alfonso"
                   width={400}
                   height={300}
                   className="h-48 w-full object-cover transition-transform hover:scale-105"
@@ -129,17 +129,17 @@ export default function Home() {
               </div>
               <div className="overflow-hidden rounded-2xl">
                 <Image
-                  src="/horno.webp"
-                  alt="Panaderos trabajando en el horno"
+                  src="/panadero-horno.jpg"
+                  alt="Panadero metiendo el pan al horno con la pala"
                   width={400}
                   height={300}
-                  className="h-48 w-full object-cover transition-transform hover:scale-105"
+                  className="h-48 w-full object-cover object-[center_40%] transition-transform hover:scale-105"
                 />
               </div>
               <div className="col-span-2 overflow-hidden rounded-2xl">
                 <Image
-                  src="/local.jpg"
-                  alt="Atención al cliente en la panadería"
+                  src="/panaderos-meson.jpg"
+                  alt="Panaderos formando el pan en el mesón"
                   width={800}
                   height={400}
                   className="h-52 w-full object-cover transition-transform hover:scale-105"
@@ -211,24 +211,22 @@ export default function Home() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                image: "/marraquetas.jpg",
+                image: "/pan-fresco.jpg",
                 name: "Pan Fresco del Día",
                 desc: "Marraquetas, hallullas, frica, amasado y más. Horneado varias veces al día para que siempre tengas pan calentito y crujiente.",
               },
               {
-                image: "/empanada-pino.jpg",
+                image: "/empanadas-horneadas.jpg",
                 name: "Empanadas de Pino",
                 desc: "Receta familiar con carne, cebolla, huevo y aceituna. Preparadas a mano como manda la tradición chilena.",
-                // La foto es un primer plano vertical: recortada al centro se ve
-                // solo la panza dorada. Subiendo el encuadre entra el repulgue y
-                // el canasto, y ahí sí se lee que es una empanada.
-                position: "object-[center_28%]",
+                // Las empanadas están en la mitad de abajo de la foto: bajando el
+                // encuadre no se corta el repulgue.
+                position: "object-[center_62%]",
               },
               {
-                image: "/galletas.webp",
+                image: "/berlines.jpg",
                 name: "Dulces y Pasteles",
                 desc: "Berlines, cachitos, tortas y pasteles para endulzar tu día. Hechos con recetas que han pasado de generación en generación.",
-                position: "object-top",
               },
             ].map((product) => (
               <div
@@ -268,7 +266,7 @@ export default function Home() {
             {[
               { image: "/marraquetas.jpg", name: "Marraqueta" },
               { image: "/hallullas.jpg", name: "Hallulla" },
-              { image: "/lenguas.jpg", name: "Completo (Lengua)" },
+              { image: "/completos.jpg", name: "Completo (Lengua)" },
               { image: "", name: "Frica" },
               { image: "", name: "Amasado" },
               { image: "", name: "Molde" },
@@ -307,8 +305,8 @@ export default function Home() {
       {/* Reparto */}
       <section id="reparto" className="relative overflow-hidden bg-brown-dark px-6 py-24">
         <Image
-          src="/panadero.webp"
-          alt="Panadero trabajando"
+          src="/carros-de-pan.jpg"
+          alt="Carros llenos de pan recién horneado en la cuadra"
           fill
           className="object-cover opacity-20"
         />
